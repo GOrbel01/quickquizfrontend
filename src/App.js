@@ -1,20 +1,32 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import QuizItem from "./component/QuizItem";
+import ReactDOM from 'react-dom';
+import mLogo from './QQLogo1.png';
+import QuizItem from "./component/makequiz/MakeQuizItem";
 import './App.css';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-        </header>
-        <button>Play</button>
-        <QuizItem />
-      </div>
-    );
-  }
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            posts: []
+        };
+    }
+
+    render() {
+        return (
+            <div className="App">
+              <header className="App-header">
+                <img src={mLogo} className="App-logo" alt="logo" />
+                <p>QuickQuiz</p>
+              </header>
+              <QuizItem/>
+                <ul>
+
+                </ul>
+            </div>
+        );
+    }
 }
 
 export default App;
