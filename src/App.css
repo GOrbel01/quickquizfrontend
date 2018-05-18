@@ -21,14 +21,34 @@
   width: 200px;
 }
 
+.qqTextInput {
+  width: 80%;
+}
+
 .qqQuizItem {
   padding: 30px;
 }
 
-.qqTable {
-  margin-left: auto;
-  margin-right: auto;
+.qqStandardInputRow > * {
+  padding-bottom: 20px;
+  align-self: center;
 }
+
+.qqTable {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.qqTable td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.qqTable tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
 
 .App-title {
   font-size: 1.5em;
@@ -36,9 +56,4 @@
 
 .App-intro {
   font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
 }

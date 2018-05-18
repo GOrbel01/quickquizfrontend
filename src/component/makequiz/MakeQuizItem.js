@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CatList from "./CatList";
+import SubCatItem from "./SubCatItem";
 
 export default class QuizItem extends Component {
     render() {
@@ -12,18 +13,20 @@ export default class QuizItem extends Component {
             <div className="qqQuizItem">
                 <table className="qqTable">
                     <tr>
-                        <div>
-                            <td>Number of Questions</td>
-                            <td>
-                                <select className="qqSelectNumberInput" name="numQuestions">
-                                    {options.map(n => <option>{n}</option>)};
-                                </select>
-                            </td>
-                        </div>
+                        <td>Number of Questions</td>
+                        <td>
+                            <select className="qqSelectNumberInput" name="numQuestions">
+                                {options.map(n => <option>{n}</option>)};
+                            </select>
+                        </td>
                     </tr>
-                    <br/>
-                    <tr>
-                        <CatList/>
+                    <CatList/>
+                    <SubCatItem/>
+                    <tr className="qqStandardInputRow">
+                        <td>Quiz Name</td>
+                        <td>
+                            <input type="text" className="qqTextInput" name="quizNameInput" ref="QuizNameInput"/>
+                        </td>
                     </tr>
                 </table>
             </div>

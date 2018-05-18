@@ -20,14 +20,14 @@ export default class CatList extends React.Component {
 
     render() {
         return (
-            <div>
+            <tr className="qqStandardInputRow">
                 <td>Quiz Category</td>
                 <td>
                 <select className="qqSelectTextInput" name="categories" ref="CatDropdown">
                     {this.state.cats.map(cat => <option>{cat}</option>)}
                 </select>
                 </td>
-            </div>
+            </tr>
         )
     }
 }
