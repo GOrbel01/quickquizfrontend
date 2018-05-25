@@ -1,34 +1,28 @@
-import React, { Component } from 'react';
+import React from 'react';
 import CatList from "./CatList";
 import SubCatItem from "./SubCatItem";
+import QuestionsView from "./QuestionsView";
+import QuizNameView from "./QuizNameView";
 
-export default class QuizItem extends Component {
-    render() {
-        let options = [];
-        for (let i = 1; i <= 8; i++) {
-            options.push(i);
+export default class QuizItem extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            cat: "",
+            subCat: "",
+            quizName: "",
         }
+    }
 
+    render() {
         return (
             <div className="qqQuizItem">
-                <table className="qqTable">
-                    <tr>
-                        <td>Number of Questions</td>
-                        <td>
-                            <select className="qqSelectNumberInput" name="numQuestions">
-                                {options.map(n => <option>{n}</option>)};
-                            </select>
-                        </td>
-                    </tr>
-                    <CatList/>
-                    <SubCatItem/>
-                    <tr className="qqStandardInputRow">
-                        <td>Quiz Name</td>
-                        <td>
-                            <input type="text" className="qqTextInput" name="quizNameInput" ref="QuizNameInput"/>
-                        </td>
-                    </tr>
-                </table>
+                <CatList/>
+                <SubCatItem/>
+                <QuizNameView/>
+                <br/>
+                <h3>Questions</h3>
+                <QuestionsView/>
             </div>
         )
     }

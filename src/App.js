@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import mLogo from './QQLogo1.png';
 import QuizItem from "./component/makequiz/MakeQuizItem";
 import './App.css';
@@ -21,9 +20,6 @@ class App extends Component {
                 <p>QuickQuiz</p>
               </header>
               <QuizItem/>
-                <ul>
-
-                </ul>
             </div>
         );
     }
