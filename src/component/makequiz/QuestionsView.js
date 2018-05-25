@@ -1,5 +1,6 @@
 import React from 'react';
 import Question from './Question';
+import AnswerItem from './AnswerItem';
 
 export default class QuestionsView extends React.Component {
     constructor() {
@@ -11,12 +12,15 @@ export default class QuestionsView extends React.Component {
         };
         this.initQuestions();
         this.handleChange = this.handleChange.bind(this);
+        this.handleChangeQuestionText = this.handleChangeQuestionText.bind(this);
+        this.handleChangeAnswerText = this.handleChangeAnswerText.bind(this);
     }
 
     initQuestions() {
         for (let i = 0; i < this.nQuestions; i++) {
-            this.state.questions[i] = new QuestionItem(i);
+            this.state.questions[i] = new QuestionItem();
         }
+
         this.state.questions[0].text = "Haha what was that.";
         this.state.questions[1].text = "Damn this sucks!";
     }
@@ -26,6 +30,27 @@ export default class QuestionsView extends React.Component {
         this.setState(() => {
             return {
               curIndex: index - 1
+            };
+        });
+    }
+
+    handleChangeQuestionText(text) {
+        const questions = this.state.questions;
+        questions[this.state.curIndex].text = text;
+        this.setState(() =>{
+           return {
+               questions: questions
+           };
+        });
+    }
+
+    handleChangeAnswerText(text, ansIndex) {
+        const questions = this.state.questions;
+        console.log('CI: ' + this.state.curIndex);
+        questions[this.state.curIndex].answers[ansIndex] = text;
+        this.setState(() =>{
+            return {
+                questions: questions
             };
         });
     }
@@ -47,15 +72,15 @@ export default class QuestionsView extends React.Component {
                         {this.genOptions()};
                     </select>
                 </div>
-                <Question questionItem={this.state.questions[this.state.curIndex]}/>
+                <Question handleChangeQuestionText={this.handleChangeQuestionText} questionItem={this.state.questions[this.state.curIndex]}/>
+                <AnswerItem handleChangeAnswerText={this.handleChangeAnswerText} questionItem={this.state.questions[this.state.curIndex]}/>
             </div>
         )
     }
 }
 
 class QuestionItem {
-    constructor(index, text = "", answers = []) {
-        this.index = index;
+    constructor(text = "", answers = []) {
         this.text = text;
         this.answers = answers;
     }

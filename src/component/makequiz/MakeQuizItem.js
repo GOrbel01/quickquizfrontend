@@ -23,8 +23,20 @@ export default class QuizItem extends React.Component {
                 <br/>
                 <h3>Questions</h3>
                 <QuestionsView/>
+                <div className="qqStandardInputRow">
+                    <button className="qqButton">Save Quiz</button>
+                </div>
             </div>
         )
     }
 
+}
+
+class QuizHolder {
+    constructor(cat, subcat, name, questionSet) {
+        this.cat = cat;
+        this.subcat = subcat;
+        this.name = name;
+        this.questionSet = questionSet;
+    }
 }

@@ -31,33 +31,28 @@
 
 .qqStandardInputRow {
   padding: 15px;
-  align-self: center;
+  margin-left:15%;
+  margin-right:15%;
 }
 
 .qqButton {
-  padding: 15px;
+  padding: 20px;
 }
 
 .qqTable {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
-  width: 100%;
+  padding: 15px;
+  width:90%;
+  margin-left:5%;
+  margin-right:5%;
 }
 
 .qqTable td {
   border: 1px solid #ddd;
-  padding: 8px;
+  padding: 5px;
 }
 
 .qqTable tr:nth-child(even) {
   background-color: #f2f2f2;
-}
-
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
 }
